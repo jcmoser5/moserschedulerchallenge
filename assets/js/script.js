@@ -77,3 +77,10 @@ function saveTask(task) {
     var event = $(task).find(".event").text();
     localStorage.setItem(key, event);
 }
+
+renderCurrentDay();
+loadTasks();
+auditTasks();
+
+setInterval(auditCurrentDay, (1000 * 60));
+setInterval(auditTasks, (1000 * 60));
